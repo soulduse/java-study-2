@@ -45,18 +45,5 @@ public class SetTest {
             int total = (int)mapData.get("total");
             System.out.println("name : "+name + " / total : "+total);
         }
-
-
-//        Iterator iter = set.iterator();
-//        while(iter.hasNext()){
-//            Map<String, Object> mapData = (Map<String, Object>)iter.next();
-//            String name = (String)mapData.get("name");
-//            int total = (int)mapData.get("total");
-//
-//
-//            System.out.println("name : "+name + " / total : "+total);
-//        }
-//        System.out.println(set);
-
     }
 }
