@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/soul-java.iml" filepath="$PROJECT_DIR$/soul-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soul-java.iml" filepath="$PROJECT_DIR$/.idea/modules/soul-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soul-java_main.iml" filepath="$PROJECT_DIR$/.idea/modules/soul-java_main.iml" group="soul-java" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/soul-java_test.iml" filepath="$PROJECT_DIR$/.idea/modules/soul-java_test.iml" group="soul-java" />
     </modules>
   </component>
 </project>
