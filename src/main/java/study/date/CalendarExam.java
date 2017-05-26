@@ -15,7 +15,15 @@ public class CalendarExam {
     public static void main(String[] args) {
         CalendarExam ce = new CalendarExam();
         String result = ce.addDate();
+        System.out.println(ce.makeCurrentTime());
         System.out.println(result);
+    }
+
+    private String makeCurrentTime(){
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHH");
+        Date currentTime = new Date( );
+        String dTime = formatter.format ( currentTime );
+        return dTime;
     }
 
     private String addDate(){

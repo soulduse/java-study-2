@@ -15,8 +15,8 @@ public class DateFormatApplyPattern {
         String a = sdf.format(date);
         System.out.println(a);
 
-        print(date);
-        print(a);
+//        print(date);
+//        print(a);
 
 
     }
