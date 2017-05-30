@@ -26,6 +26,11 @@ public class CompletionServiceExample extends Thread{
 
     private static final int SECOND           = 1000;
 
+    private static final String BARISTA_A = "pool-1-thread-1";
+    private static final String BARISTA_B = "pool-1-thread-2";
+    private static final String BARISTA_C = "pool-1-thread-3";
+    private static final String BARISTA_D = "pool-1-thread-4";
+
 
     public static void main(String[] args){
         // 데이터 주입
@@ -61,11 +66,20 @@ public class CompletionServiceExample extends Thread{
                         if(name.equals(TEXT_ESPRESSO)){
                             time = TIME_ESPRESSO;
                         }else if(name.equals(TEXT_AMERICANO)){
-                            time = TIME_AMERICANO;
+                            if(threadName.equals(BARISTA_B))
+                                time = 4;
+                            else
+                                time = TIME_AMERICANO;
                         }else if(name.equals(TEXT_JUICE)){
-                            time = TIME_JUICE;
+                            if(threadName.equals(BARISTA_A))
+                                time = 4;
+                            else
+                                time = TIME_JUICE;
                         }else if(name.equals(TEXT_CAFFELATTE)){
-                            time = TIME_CAFFELATTE;
+                            if(threadName.equals(BARISTA_D))
+                                time = 5;
+                            else
+                                time = TIME_CAFFELATTE;
                         }
                         System.out.println(threadName+" --> "+name+" 만드는 중 / 소요시간 : "+time+"초");
                         Thread.sleep(SECOND * time);
@@ -76,7 +90,7 @@ public class CompletionServiceExample extends Thread{
 
             completionService.submit(task);
         }
-
+        executorService.shutdown();
         while (!executorService.isTerminated()){
             try{
                 Future<Beverage> future = completionService.take();
@@ -86,9 +100,6 @@ public class CompletionServiceExample extends Thread{
                 e.printStackTrace();
             }
         }
-
-
-        executorService.shutdownNow();
     }
 
 
