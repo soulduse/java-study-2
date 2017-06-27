@@ -11,5 +11,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    // jsoup
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.2'
     compile 'joda-time:joda-time:2.9.3'
 }
